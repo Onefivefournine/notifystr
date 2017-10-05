@@ -90,7 +90,7 @@ $green: #6ae2a2;
 <script>
 import Vue from 'vue';
 export const ee = new Vue();
-export const comp = {
+export const notifystr = {
   data() {
     return {
       toasts: []
