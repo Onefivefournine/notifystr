@@ -4,7 +4,7 @@ $green: #6ae2a2;
 .notifystr {
   &__container {
     position: fixed;
-    top: 20px; // left: 10px;
+    top: 20px;
     width: 35%;
     right: 20px;
   }
@@ -89,9 +89,8 @@ $green: #6ae2a2;
 </template>
 <script>
 import Vue from 'vue';
-export default { ee, notifystr }
 export const ee = new Vue();
-export const notifystr = {
+export const notifystr = Vue.extend( {
   data() {
     return {
       toasts: []
@@ -152,5 +151,7 @@ export const notifystr = {
       Vue.set( toast, 'hovered', true );
     }
   },
-}
+} );
+
+export default { ee, notifystr }
 </script>
