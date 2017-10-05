@@ -89,6 +89,7 @@ $green: #6ae2a2;
 </template>
 <script>
 import Vue from 'vue';
+export default { ee, notifystr }
 export const ee = new Vue();
 export const notifystr = {
   data() {
