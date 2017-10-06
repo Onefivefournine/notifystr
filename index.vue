@@ -89,18 +89,20 @@ $green: #6ae2a2;
 </template>
 <script>
 import Vue from 'vue';
-export const ee = new Vue();
-export const notifystr = Vue.extend( {
+export default Vue.extend( {
   data() {
     return {
       toasts: []
     }
   },
+  props: {
+    eventBus: { default: () => new Vue() }
+  },
   created() {
-    ee.$on( 'success', this.success );
-    ee.$on( 'info', this.info );
-    ee.$on( 'warning', this.warning );
-    ee.$on( 'danger', this.danger );
+    this.eventBus.$on( 'success', this.success );
+    this.eventBus.$on( 'info', this.info );
+    this.eventBus.$on( 'warning', this.warning );
+    this.eventBus.$on( 'danger', this.danger );
   },
   methods: {
     success( title, message ) {
@@ -152,6 +154,4 @@ export const notifystr = Vue.extend( {
     }
   },
 } );
-
-export default { ee, notifystr }
 </script>
