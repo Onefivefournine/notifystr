@@ -27,7 +27,6 @@ git clone https://github.com/Onefivefournine/notifystr.git
 ### Usage
 ```javascript
 // Import and register component
-
 import Vue from 'vue';
 import notifystr from 'notifystr';
 
